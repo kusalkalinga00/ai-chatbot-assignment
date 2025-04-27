@@ -5,38 +5,100 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Send, Mic, Calendar, Clock, Info, MapPin } from "lucide-react";
+import {
+  Send,
+  Mic,
+  Calendar,
+  Clock,
+  Info,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 import QuickAction from "@/components/custom/QuickAction";
 import { Message, useChat } from "@ai-sdk/react";
 import MessageComp from "@/components/custom/MessageComp";
-
-// const INITIAL_MESSAGES: Message[] = [
-//   {
-//     id: "1",
-//     content:
-//       "Hello! I'm your hospital assistant. I can help you with appointment scheduling, medical information, facility directions, and more. How can I assist you today?",
-//     role: "assistant",
-//   },
-// ];
+import { motion } from "framer-motion";
 
 const ChatView = () => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    setInput,
+    setMessages,
+  } = useChat();
+  const [chatInitiated, setChatInitiated] = useState(false);
 
   useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
-    }
+    const timer = setTimeout(() => {
+      const viewport = scrollAreaRef.current?.querySelector(
+        '[data-slot="scroll-area-viewport"]'
+      );
+      if (viewport) {
+        viewport.scrollTop = viewport.scrollHeight;
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [messages]);
 
   const handleQuickAction = (text: string) => {
     // setInput(text);
+    setInput(text);
   };
+
+  const initiateChat = async () => {
+    setChatInitiated(true);
+    setMessages([
+      {
+        id: "1",
+        content:
+          "Hello! I'm your Ashoka hospital assistant. I can help you with appointment scheduling, medical information, facility directions, and more. How can I assist you today?",
+        role: "assistant",
+      },
+    ]);
+  };
+
+  if (!chatInitiated) {
+    return (
+      <Card className="border rounded-xl shadow-lg overflow-hidden backdrop-blur-sm bg-card/80 h-[70vh] flex items-center justify-center">
+        <motion.div
+          className="text-center p-8"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex justify-center mb-6">
+            <div className="bg-gradient-to-br from-primary to-secondary p-5 rounded-full">
+              <MessageCircle className="h-12 w-12 text-primary-foreground" />
+            </div>
+          </div>
+          <h2 className="text-2xl font-bold mb-3">
+            Welcome to Ashoka Hospital Assistant
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-md">
+            Ask questions about appointments,channeling services, or medical
+            information
+          </p>
+          <Button
+            onClick={initiateChat}
+            size="lg"
+            className="rounded-full px-8 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+          >
+            <MessageCircle className="mr-2 h-5 w-5" />
+            Start Conversation
+          </Button>
+        </motion.div>
+      </Card>
+    );
+  }
 
   return (
     <Card className="border rounded-xl shadow-lg overflow-hidden backdrop-blur-sm bg-card/80">
       <div className="flex flex-col h-[70vh]">
-        <ScrollArea className="flex-1 p-6" ref={scrollAreaRef}>
+        <ScrollArea className="flex-1 p-6 overflow-y-auto" ref={scrollAreaRef}>
           <div className="space-y-6">
             {messages.map((message: Message, index: number) => (
               <MessageComp
@@ -93,35 +155,6 @@ const ChatView = () => {
               </Button>
             </form>
           </section>
-
-          {/* <form onSubmit={handleSubmit} className="flex gap-2">
-            <Input
-              placeholder="Type your message..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="flex-1 bg-background/50 border-border/40 focus-visible:ring-primary/40"
-              disabled={isLoading}
-            />
-            <Button
-              type="button"
-              size="icon"
-              variant="outline"
-              className="rounded-full"
-              disabled={isLoading}
-            >
-              <Mic className="h-4 w-4" />
-              <span className="sr-only">Voice input</span>
-            </Button>
-            <Button
-              type="submit"
-              size="icon"
-              className="rounded-full"
-              disabled={isLoading}
-            >
-              <Send className="h-4 w-4" />
-              <span className="sr-only">Send message</span>
-            </Button>
-          </form> */}
         </div>
       </div>
     </Card>
