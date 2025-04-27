@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Message } from "@ai-sdk/react";
 
 const MessageComp: React.FC<Message> = (props) => {
-  const { id, content, role } = props;
+  const { content, role } = props;
   const isUser = role === "user";
   return (
     <motion.div
