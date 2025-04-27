@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Send,
-  
   Calendar,
   Clock,
   Info,
@@ -28,7 +27,10 @@ const ChatView = () => {
     handleSubmit,
     setInput,
     setMessages,
-  } = useChat();
+  } = useChat({
+    maxSteps: 5,
+  });
+
   const [chatInitiated, setChatInitiated] = useState(false);
 
   useEffect(() => {

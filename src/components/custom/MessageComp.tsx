@@ -4,6 +4,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { User, Bot } from "lucide-react";
 import { motion } from "framer-motion";
 import { Message } from "@ai-sdk/react";
+import ReactMarkdown from "react-markdown";
 
 const MessageComp: React.FC<Message> = (props) => {
   const { content, role } = props;
@@ -38,7 +39,31 @@ const MessageComp: React.FC<Message> = (props) => {
             : "bg-gradient-to-br from-card to-muted/50 text-card-foreground border border-border/40 "
         )}
       >
-        <div className="text-sm leading-relaxed">{content}</div>
+        {/* <div className="text-sm leading-relaxed">{content}</div> */}
+
+        <ReactMarkdown
+          // components={{
+          //   table: (props) => (
+          //     <div className="overflow-x-auto my-2">
+          //       <table
+          //         className="border-collapse border border-border"
+          //         {...props}
+          //       />
+          //     </div>
+          //   ),
+          //   th: (props) => (
+          //     <th
+          //       className="border border-border bg-muted px-3 py-1"
+          //       {...props}
+          //     />
+          //   ),
+          //   td: (props) => (
+          //     <td className="border border-border px-3 py-1" {...props} />
+          //   ),
+          // }}
+        >
+          {content}
+        </ReactMarkdown>
       </div>
     </motion.div>
   );

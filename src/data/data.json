@@ -1,0 +1,303 @@
+{
+  "hospitalName": "Ashoka Hospital",
+  "departments": [
+    "Emergency Medicine",
+    "General Surgery",
+    "Internal Medicine",
+    "Pediatrics",
+    "Obstetrics & Gynecology",
+    "Orthopedics",
+    "Cardiology",
+    "Neurology",
+    "Neurosurgery",
+    "Oncology",
+    "Dermatology",
+    "Urology",
+    "ENT (Otolaryngology)",
+    "Ophthalmology",
+    "Gastroenterology",
+    "Endocrinology",
+    "Nephrology",
+    "Psychiatry",
+    "Radiology",
+    "Pathology (Laboratory)"
+  ],
+  "services": [
+    "24/7 Emergency Department",
+    "Outpatient Clinics",
+    "Inpatient Care",
+    "Diagnostic Imaging (X-ray, MRI, CT, Ultrasound)",
+    "Clinical Laboratory Services",
+    "Pharmacy (open 24/7)",
+    "Ambulance and Patient Transport",
+    "Intensive Care Unit (ICU) and Critical Care",
+    "Neonatal ICU",
+    "Dialysis Center",
+    "Physiotherapy and Rehabilitation",
+    "Nutrition and Dietetics Services",
+    "Telemedicine Consultations",
+    "Health Check-Up and Screening Packages",
+    "Blood Bank",
+    "Vaccination and Immunization Services",
+    "Cancer Screening Programs",
+    "Wellness and Preventive Health Programs",
+    "Dental Services",
+    "Renal Transplant Unit",
+    "Cardiac Rehabilitation Program",
+    "Sleep Lab",
+    "Labor and Delivery Services",
+    "Dermatology Clinic",
+    "ENT Clinic",
+    "Ophthalmology Clinic"
+  ],
+  "healthCheckPackages": [
+    {
+      "name": "Basic Health Check",
+      "description": "General health screening including blood tests and basic examinations",
+      "includedTests": [
+        "Complete Blood Count (CBC)",
+        "Fasting Blood Glucose",
+        "Lipid Profile",
+        "Liver Function Test (LFT)",
+        "Renal Function Test (RFT)",
+        "Urine Analysis",
+        "ECG",
+        "Blood Pressure Check",
+        "Body Mass Index (BMI) Assessment"
+      ],
+      "price": { "amount": 1500, "currency": "LKR" }
+    },
+    {
+      "name": "Executive Health Check",
+      "description": "Comprehensive health screening package for executives with additional tests",
+      "includedTests": [
+        "All tests in Basic Health Check package",
+        "Thyroid Profile",
+        "HIV Screening",
+        "Chest X-Ray",
+        "Stress ECG",
+        "Vision and Hearing Test",
+        "Dental Checkup"
+      ],
+      "price": { "amount": 5000, "currency": "LKR" }
+    },
+    {
+      "name": "Women’s Wellness Package",
+      "description": "Specialized package focusing on women’s health and preventive screenings",
+      "includedTests": [
+        "All tests in Basic Health Check package",
+        "Pap Smear (Cervical Cancer Screening)",
+        "Mammogram (for age 40+)",
+        "Bone Mineral Density (for age 50+)",
+        "Thyroid Ultrasound",
+        "High-Sensitivity C-Reactive Protein (hs-CRP)"
+      ],
+      "price": { "amount": 4500, "currency": "LKR" }
+    },
+    {
+      "name": "Men’s Health Package",
+      "description": "Comprehensive health package focusing on men’s specific health needs",
+      "includedTests": [
+        "All tests in Basic Health Check package",
+        "PSA (Prostate Specific Antigen)",
+        "Testosterone Level",
+        "Thyroid Profile",
+        "Liver Ultrasound",
+        "High-Sensitivity C-Reactive Protein (hs-CRP)"
+      ],
+      "price": { "amount": 4500, "currency": "LKR" }
+    },
+    {
+      "name": "Cardiac Care Check",
+      "description": "Advanced cardiovascular risk assessment package",
+      "includedTests": [
+        "Complete Blood Count (CBC)",
+        "Fasting Lipid Profile",
+        "Fasting Blood Sugar",
+        "Liver and Kidney Function Tests",
+        "Treadmill Stress Test",
+        "Echocardiogram",
+        "Coronary Artery Calcium Score (CT Scan)",
+        "hs-CRP",
+        "Troponin I (cardiac enzyme)"
+      ],
+      "price": { "amount": 8000, "currency": "LKR" }
+    },
+    {
+      "name": "Senior Citizen Check (Men)",
+      "description": "Comprehensive screening package tailored for older adult men",
+      "includedTests": [
+        "All tests in Basic Health Check package",
+        "Prostate Specific Antigen (PSA)",
+        "Lipid Profile",
+        "Thyroid Profile",
+        "Bone Mineral Density (DEXA)",
+        "Renal Ultrasound",
+        "Brain MRI (for stroke risk evaluation)",
+        "Electrocardiogram (ECG) and Echocardiogram"
+      ],
+      "price": { "amount": 9000, "currency": "LKR" }
+    },
+    {
+      "name": "Senior Citizen Check (Women)",
+      "description": "Comprehensive screening package tailored for older adult women",
+      "includedTests": [
+        "All tests in Basic Health Check package",
+        "Thyroid Profile",
+        "Mammogram (for age 50+)",
+        "Bone Mineral Density (DEXA)",
+        "Lipid Profile",
+        "Renal Ultrasound",
+        "Pap Smear",
+        "Electrocardiogram (ECG) and Echocardiogram"
+      ],
+      "price": { "amount": 9000, "currency": "LKR" }
+    }
+  ],
+  "doctorSchedules": [
+    {
+      "name": "Dr. Arjun Sharma",
+      "specialty": "Cardiology",
+      "schedule": [
+        { "day": "Monday", "time": "10:00 - 14:00" },
+        { "day": "Wednesday", "time": "10:00 - 14:00" },
+        { "day": "Friday", "time": "14:00 - 18:00" }
+      ],
+      "consultationFee": { "amount": 2500, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Priya Nair",
+      "specialty": "Neurology",
+      "schedule": [
+        { "day": "Tuesday", "time": "09:00 - 12:00" },
+        { "day": "Thursday", "time": "09:00 - 12:00" }
+      ],
+      "consultationFee": { "amount": 3000, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Kumar Patel",
+      "specialty": "Orthopedics",
+      "schedule": [
+        { "day": "Monday", "time": "14:00 - 18:00" },
+        { "day": "Thursday", "time": "10:00 - 14:00" }
+      ],
+      "consultationFee": { "amount": 2000, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Seema Mehta",
+      "specialty": "Pediatrics",
+      "schedule": [
+        { "day": "Monday", "time": "09:00 - 11:00" },
+        { "day": "Wednesday", "time": "09:00 - 11:00" },
+        { "day": "Friday", "time": "09:00 - 12:00" }
+      ],
+      "consultationFee": { "amount": 1500, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Omar Rizvi",
+      "specialty": "General Surgery",
+      "schedule": [
+        { "day": "Tuesday", "time": "13:00 - 17:00" },
+        { "day": "Friday", "time": "09:00 - 13:00" }
+      ],
+      "consultationFee": { "amount": 2800, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Anjali Kapoor",
+      "specialty": "Gynecology & Obstetrics",
+      "schedule": [
+        { "day": "Tuesday", "time": "09:00 - 12:00" },
+        { "day": "Thursday", "time": "14:00 - 17:00" }
+      ],
+      "consultationFee": { "amount": 2200, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Manoj Iyer",
+      "specialty": "Ophthalmology",
+      "schedule": [
+        { "day": "Wednesday", "time": "10:00 - 13:00" },
+        { "day": "Saturday", "time": "11:00 - 14:00" }
+      ],
+      "consultationFee": { "amount": 1800, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Kavitha Reddy",
+      "specialty": "Dermatology",
+      "schedule": [
+        { "day": "Monday", "time": "11:00 - 14:00" },
+        { "day": "Thursday", "time": "09:00 - 12:00" },
+        { "day": "Friday", "time": "13:00 - 16:00" }
+      ],
+      "consultationFee": { "amount": 1800, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Rajiv Singh",
+      "specialty": "ENT (Otolaryngology)",
+      "schedule": [
+        { "day": "Tuesday", "time": "10:00 - 13:00" },
+        { "day": "Saturday", "time": "09:00 - 12:00" }
+      ],
+      "consultationFee": { "amount": 1700, "currency": "LKR" }
+    },
+    {
+      "name": "Dr. Neha Goyal",
+      "specialty": "Oncology (Medical)",
+      "schedule": [
+        { "day": "Wednesday", "time": "14:00 - 18:00" },
+        { "day": "Friday", "time": "10:00 - 14:00" }
+      ],
+      "consultationFee": { "amount": 3200, "currency": "LKR" }
+    }
+  ],
+  "facilities": [
+    "Modern Operating Theaters",
+    "Intensive Care Units (ICU/CCU/NICU)",
+    "24/7 Pharmacy",
+    "Advanced Diagnostic Laboratory",
+    "Radiology and Imaging Center",
+    "In-house Blood Bank",
+    "Ambulance and Transport Services",
+    "Helipad for Emergency Transfers",
+    "In-House Cafeteria and Cafe",
+    "Patient Waiting Lounges",
+    "Comfortable Patient Rooms and Suites",
+    "Prayer and Meditation Room",
+    "Physiotherapy Gym and Rehabilitation Center",
+    "Medical Library and Research Center",
+    "Conference and Training Rooms",
+    "Banking and ATM Services"
+  ],
+  "wellnessPrograms": [
+    "Nutritional Counseling and Diet Planning",
+    "Yoga and Meditation Classes",
+    "Smoking Cessation Program",
+    "Cardiac Rehabilitation Classes",
+    "Stress Management Workshops",
+    "Weight Management Program",
+    "Prenatal Fitness and Yoga",
+    "Postnatal Counseling",
+    "Senior Fitness and Mobility Workshops",
+    "Mental Health Awareness Seminars"
+  ],
+  "contact": {
+    "address": "123 Ashoka Street, Centerville, State, 12345, Country",
+    "phone": {
+      "general": "+1-234-567-8900",
+      "emergency": "911",
+      "appointments": "+1-234-567-8901"
+    },
+    "email": "info@ashokahospital.com",
+    "website": "www.ashokahospital.com"
+  },
+  "visiting_hours": {
+    "general_wards": {
+      "morning": "06:00 AM - 07:00 AM",
+      "afternoon": "12:00 PM - 01:00 PM",
+      "evening": "05:00 PM - 06:00 PM"
+    },
+    "icu": {
+      "morning": "06:30 AM - 07:00 AM",
+      "evening": "05:30 PM - 06:00 PM"
+    }
+  }
+}
