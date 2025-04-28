@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
-import { User, Bot } from "lucide-react";
+import { User, Bot, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Message } from "@ai-sdk/react";
 import MarkdownPreview from "@uiw/react-markdown-preview";
@@ -36,20 +36,24 @@ const MessageComp: React.FC<Message> = (props) => {
         className={cn(
           "rounded-2xl px-4 py-3 max-w-[80%] shadow-sm",
           isUser
-            ? "bg-gradient-to-br from-primary to-primary/90 text-primary-foreground "
+            ? "bg-black"
             : "bg-gradient-to-br from-card to-muted/50 text-card-foreground border border-border/40 "
         )}
       >
         {/* <div className="text-sm leading-relaxed">{content}</div> */}
 
-        <MarkdownPreview
-          source={content}
-          style={{
-            padding: "0.5rem",
-            fontSize: "0.875rem",
-            backgroundColor: "transparent",
-          }}
-        />
+        {!content ? (
+          <Loader2 className="animate-spin h-4 w-4 text-muted-foreground" />
+        ) : (
+          <MarkdownPreview
+            source={content}
+            style={{
+              padding: "0.5rem",
+              fontSize: "0.875rem",
+              backgroundColor: "transparent",
+            }}
+          />
+        )}
       </div>
     </motion.div>
   );
