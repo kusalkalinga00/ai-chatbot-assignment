@@ -4,7 +4,6 @@ import { Avatar } from "@/components/ui/avatar";
 import { User, Bot } from "lucide-react";
 import { motion } from "framer-motion";
 import { Message } from "@ai-sdk/react";
-import ReactMarkdown from "react-markdown";
 import MarkdownPreview from "@uiw/react-markdown-preview";
 
 const MessageComp: React.FC<Message> = (props) => {

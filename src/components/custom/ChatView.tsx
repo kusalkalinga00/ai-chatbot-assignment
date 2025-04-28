@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Send,
-  Calendar,
   Clock,
   Info,
   MapPin,

@@ -17,6 +17,8 @@ export const createVectorStore = async () => {
       createReadStream("data.json")
     );
 
+    console.log("Vector store created successfully:", result);
+
     return {
       message: "Vector store created successfully",
     };
