@@ -1,4 +1,4 @@
-import { getInformationsFromJson } from "@/utils";
+import { retrieveVectorStore } from "@/app/actions/retrieve-vector-store.action";
 import { openai } from "@ai-sdk/openai";
 import { streamText, tool } from "ai";
 import { z } from "zod";
@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai("gpt-4"),
+    model: openai("gpt-4o-mini"),
     messages,
     toolCallStreaming: true,
     system: `You are a helpful and professional virtual assistant for Ashoka Hospital.
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     4. Add a polite acknowledgment before the data
     
     Never make up information or skip using the tool.
-    If the tool returns "No specific information found", politely say you don't have that information.`,
+    If the tool returns "No specific information found", politely say you don't have that information and tell the contact information.`,
     tools: {
       getInformations: tool({
         description:
@@ -29,9 +29,8 @@ export async function POST(req: Request) {
           query: z.string().describe("The exact user question"),
         }),
         execute: async ({ query }) => {
-          const result = getInformationsFromJson(query);
-
-          return result;
+          const result = await retrieveVectorStore({ query });
+          return result ?? "No specific information found.";
         },
       }),
     },

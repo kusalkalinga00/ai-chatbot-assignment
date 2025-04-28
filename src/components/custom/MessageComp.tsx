@@ -5,10 +5,12 @@ import { User, Bot } from "lucide-react";
 import { motion } from "framer-motion";
 import { Message } from "@ai-sdk/react";
 import ReactMarkdown from "react-markdown";
+import MarkdownPreview from "@uiw/react-markdown-preview";
 
 const MessageComp: React.FC<Message> = (props) => {
   const { content, role } = props;
   const isUser = role === "user";
+
   return (
     <motion.div
       className={cn("flex items-start gap-3", isUser ? "flex-row-reverse" : "")}
@@ -41,29 +43,14 @@ const MessageComp: React.FC<Message> = (props) => {
       >
         {/* <div className="text-sm leading-relaxed">{content}</div> */}
 
-        <ReactMarkdown
-          // components={{
-          //   table: (props) => (
-          //     <div className="overflow-x-auto my-2">
-          //       <table
-          //         className="border-collapse border border-border"
-          //         {...props}
-          //       />
-          //     </div>
-          //   ),
-          //   th: (props) => (
-          //     <th
-          //       className="border border-border bg-muted px-3 py-1"
-          //       {...props}
-          //     />
-          //   ),
-          //   td: (props) => (
-          //     <td className="border border-border px-3 py-1" {...props} />
-          //   ),
-          // }}
-        >
-          {content}
-        </ReactMarkdown>
+        <MarkdownPreview
+          source={content}
+          style={{
+            padding: "0.5rem",
+            fontSize: "0.875rem",
+            backgroundColor: "transparent",
+          }}
+        />
       </div>
     </motion.div>
   );

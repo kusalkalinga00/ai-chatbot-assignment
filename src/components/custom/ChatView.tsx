@@ -12,6 +12,7 @@ import {
   Info,
   MapPin,
   MessageCircle,
+  TestTube,
 } from "lucide-react";
 import QuickAction from "@/components/custom/QuickAction";
 import { Message, useChat } from "@ai-sdk/react";
@@ -116,10 +117,10 @@ const ChatView = () => {
         <div className="p-3 border-t border-border/40 bg-card/90">
           <div className="flex gap-2 mb-3 overflow-x-auto pb-2 scrollbar-thin">
             <QuickAction
-              icon={<Calendar className="h-3 w-3" />}
-              text="Book an appointment"
+              icon={<TestTube className="h-3 w-3" />}
+              text="Test Packages"
               onClick={() =>
-                handleQuickAction("I'd like to book an appointment")
+                handleQuickAction("I'd like to know about the test packages.")
               }
             />
             <QuickAction
@@ -129,15 +130,19 @@ const ChatView = () => {
             />
             <QuickAction
               icon={<Info className="h-3 w-3" />}
-              text="Services offered"
+              text="Consultation services"
               onClick={() =>
-                handleQuickAction("What services does the hospital offer?")
+                handleQuickAction(
+                  "What Consultation services does the hospital offer?"
+                )
               }
             />
             <QuickAction
               icon={<MapPin className="h-3 w-3" />}
-              text="Directions"
-              onClick={() => handleQuickAction("How do I get to the hospital?")}
+              text="location"
+              onClick={() =>
+                handleQuickAction("Where is Ashoka Hospital located?")
+              }
             />
           </div>
           <section className="">
