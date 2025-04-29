@@ -14,7 +14,7 @@ export const createVectorStore = async () => {
   try {
     const result = await client.vectorStores.files.uploadAndPoll(
       vector_store.id,
-      createReadStream("data.json")
+      createReadStream("src/app/actions/data.json")
     );
 
     console.log("Vector store created successfully:", result);

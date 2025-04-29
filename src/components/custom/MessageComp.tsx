@@ -51,6 +51,8 @@ const MessageComp: React.FC<Message> = (props) => {
               padding: "0.5rem",
               fontSize: "0.875rem",
               backgroundColor: "transparent",
+              maxWidth: "600px",
+              width: "100%",
             }}
           />
         )}
