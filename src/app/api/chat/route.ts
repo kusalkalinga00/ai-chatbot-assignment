@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     4. Add a polite acknowledgment before the data
     
     Never make up information or skip using the tool.
-    If the tool returns "No specific information found", politely say you don't have that information and tell the contact information.`,
+    If the tool returns "No specific information found", politely say you don't have that information and tell the contact information.Don't answer any question that is not related to the hospital.`,
     tools: {
       getInformations: tool({
         description:
